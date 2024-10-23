@@ -1,0 +1,22 @@
+{
+  "name": "test-pat",
+  "version": "1.0.0",
+  "description": "testing pat",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/robert-seitz-uniswap/test-pat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robert-seitz-uniswap/test-pat/issues"
+  },
+  "homepage": "https://github.com/robert-seitz-uniswap/test-pat#readme",
+  "dependencies": {
+    "ethers": "^6.13.4"
+  }
+}

@@ -128,3 +128,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+unsupported-token-list/
+extended-token-list/
+default-token-list/
