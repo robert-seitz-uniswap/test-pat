@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function getChainNameFromId { 
 if [ ! $1 ]; 
 then

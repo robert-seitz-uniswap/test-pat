@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/bin/bash
 function getTokenFromApi {
     chain=$1
 

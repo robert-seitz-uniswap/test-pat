@@ -7,7 +7,6 @@ function getJsonList {
     addNew=Yes
     jsonList="[]"
     names=()
-    echo "${names[@]}"
     while [ "$addNew" == "Yes" ]
     do
         read -p "enter address " address
@@ -29,13 +28,11 @@ function getJsonList {
                     '{chainId: $ci, address: $ad, name: $nm, symbol: $sm, decimals: $dc, logoURI: $lg}' )
         jsonList=$(echo $jsonList | jq ". += [${jsonObject}]")
         names=("${names[@]}" "$name")
-        echo "${names[@]}"
         addNew=No
         choices=("No" "Yes")
         getChoice -q "Add Another Token?" -o choices -v "addNew"
     done
 
     eval "$1='$jsonList'"
-    echo "${names[@]}"
     eval "$2='${names}'"
 }
