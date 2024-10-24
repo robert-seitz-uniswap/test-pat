@@ -18,12 +18,12 @@ function getJsonList {
         chainId=$(getChainIdFromName $chainName)
         read -p "enter logo url (optional)" logoURI
         
-        jsonObject=$( jq -n \
-                    --arg ci "$chainId" \
+        jsonObject=$(jq -n \
+                    --argjson ci $chainId \
                     --arg ad "$checksummedAddress" \
                     --arg nm "$name" \
                     --arg sm "$symbol" \
-                    --arg dc "$decimals" \
+                    --argjson dc "$decimals" \
                     --arg lg "$logoURI" \
                     '{chainId: $ci, address: $ad, name: $nm, symbol: $sm, decimals: $dc, logoURI: $lg}' )
         jsonList=$(echo $jsonList | jq ". += [${jsonObject}]")
