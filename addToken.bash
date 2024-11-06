@@ -56,10 +56,10 @@ branchName=add-$(printf '%s-' "${names[@]}")$(date '+%Y-%m-%d')-$random
 branchName="${branchName// /_}"
 
 git checkout -b $branchName
-npm version minor
 git add -u
 commitMsg=$(printf 'add %s' "${names[@]}")
 git commit -m "$commitMsg"
+npm version minor
 git push -u -f origin HEAD
 gh pr create
 git checkout main
