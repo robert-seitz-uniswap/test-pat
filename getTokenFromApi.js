@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-async function getTokenFromApi(chain, address) {
+export async function getTokenFromApi(chain, address) {
   // Get checksummed address (assuming the checksum function is imported)
   const checksummedAddress = getChecksumAddress(address);
 
