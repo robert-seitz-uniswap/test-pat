@@ -4,10 +4,7 @@ import chalk from "chalk";
 class Menu {
   constructor() {
     this.currentSelection = "";
-
-    // Configure readline
     emitKeypressEvents(process.stdin);
-    process.stdin.setRawMode(true);
   }
 
   hideCursor() {
@@ -16,7 +13,6 @@ class Menu {
     // Handle CTRL+C
     process.on("SIGINT", () => {
       this.showCursor();
-      console.log("");
       process.exit(0);
     });
   }

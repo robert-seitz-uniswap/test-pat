@@ -40,7 +40,7 @@ const getChecksumAddress = (address) => {
     const checksummed = ethers.getAddress(address);
     return checksummed;
   } catch (e) {
-    process.stderr.write(e);
+    process.stderr.write(e.toString());
     throw e;
   }
 };

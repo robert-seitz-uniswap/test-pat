@@ -15,7 +15,7 @@ function question(prompt) {
 }
 
 export async function getJsonList(chainName) {
-  const menu = new Menu();
+  let menu = new Menu();
   let jsonList = [];
   let names = [];
   let addNew = true;
@@ -42,6 +42,7 @@ export async function getJsonList(chainName) {
 
     // Ask if user wants to add another token
     const choices = ["No", "Yes"];
+    menu = new Menu();
     const choice = await menu.getChoice({
       query: "Add Another Token?",
       items: choices,
@@ -51,20 +52,12 @@ export async function getJsonList(chainName) {
     addNew = choice === "Yes";
   }
 
-  rl.close();
   return { jsonList, names };
 }
 
-// Example usage:
-// if (import.meta.url === `file://${process.argv[1]}`) {
-//     try {
-//         const { jsonList, names } = await getJsonList('1'); // Using Ethereum chain ID
-//         console.log('JSON List:', JSON.stringify(jsonList, null, 2));
-//         console.log('Names:', names);
-//     } catch (error) {
-//         console.error('Error:', error);
-//         process.exit(1);
-//     }
-// }
-
-getJsonList("BASE");
+export function closeReadline() {
+  if (rl) {
+    rl.close();
+    rl = null;
+  }
+}
