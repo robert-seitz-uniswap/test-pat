@@ -122,7 +122,6 @@ async function addToken() {
     execSync("gh pr create", { stdio: "inherit" });
     execSync("git checkout main", { stdio: "inherit" });
   } catch (error) {
-    console.log("error");
     process.stdin.setRawMode(false);
     process.stdin.pause();
     console.error(error);
